@@ -1,11 +1,8 @@
-# Title of Setup
+# Domain Controller Setup
 
 ## Objective
 
-Explain what this system/service is used for and why it exists in the environment.
-
-Example:
-This server was configured to provide centralized identity management for the help desk environment.
+A Domain Controller is used to authenticate users, enforce security policies, and manage resource access.
 
 ---
 
@@ -14,22 +11,15 @@ This server was configured to provide centralized identity management for the he
 | Item | Value |
 |---|---|
 | Server Name | DC01 |
-| OS | Windows Server 2022 |
-| IP Address | 192.168.1.10 |
+| OS | Windows Server 2025 |
+| IP Address | 172.16.0.10 |
 | Role | Domain Controller |
 
 ---
 
 # Prerequisites
 
-List requirements before installation.
-
-Example:
-- Static IP configured
-- Windows Server installed
-- Internet connectivity
-- Administrator account
-- ISO downloaded
+- VirtualBox Downloaded
 
 ---
 
@@ -41,11 +31,13 @@ Step-by-step deployment process.
 
 ### Install Server Role
 
-1. Open Server Manager
-2. Select Add Roles and Features
-3. Install:
-   - Active Directory Domain Services
-   - DNS Server
+1. Open VirtualBox
+2. Left-click the new button
+3. Enter:
+   - The name of the machine (DC01)
+   - The ISO Image
+   - OS Edition
+   - 
 
 ---
 
