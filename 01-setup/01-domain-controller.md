@@ -2,7 +2,7 @@
 
 ## Objective
 
-A Domain Controller is used to authenticate users, enforce security policies, and manage resource access.
+The Domain Controller is used to authenticate users, enforce security policies, and manage resource access.
 
 ---
 
