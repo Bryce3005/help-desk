@@ -1,4 +1,4 @@
-# Title of Setup
+# macOS Setup
 
 ## Objective
 
