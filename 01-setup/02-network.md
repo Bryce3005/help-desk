@@ -2,10 +2,7 @@
 
 ## Objective
 
-Explain what this system/service is used for and why it exists in the environment.
-
-Example:
-This server was configured to provide centralized identity management for the help desk environment.
+This networking setup is designed to host servers and workstations and connect all devices to the domain network brycefalker.com. 
 
 ---
 
@@ -15,38 +12,15 @@ This server was configured to provide centralized identity management for the he
 |---|---|
 | Server Name | DC01 |
 | OS | Windows Server 2022 |
-| IP Address | 192.168.1.10 |
+| IP Address | 172.16.0.10 |
 | Role | Domain Controller |
 
 ---
 
 # Prerequisites
 
-List requirements before installation.
-
-Example:
-- Static IP configured
-- Windows Server installed
-- Internet connectivity
-- Administrator account
-- ISO downloaded
-
----
-
-# Installation Steps
-
-Step-by-step deployment process.
-
-## Example
-
-### Install Server Role
-
-1. Open Server Manager
-2. Select Add Roles and Features
-3. Install:
-   - Active Directory Domain Services
-   - DNS Server
-
+- Creation of the domain controller machine
+  
 ---
 
 # Configuration Steps
@@ -64,13 +38,12 @@ Examples:
 
 # Validation / Testing
 
-Show how you verified functionality.
-
-Examples:
-- Successful domain join
-- User synced to Microsoft 365
-- Ticket submission successful
-- GPO applied correctly
+- Pinged a DNS Server in the command prompt
+   - 8.8.8.8
+- Used ipconfig /all in the command prompt
+   - IP address for the internal NIC should be 172.16.0.10
+   -  IP address for the internet NIC should start with a 10
+- Open Microsoft Edge and see if you can access a website
 
 ---
 
@@ -80,53 +53,22 @@ Document problems encountered and solutions.
 
 | Issue | Solution |
 |---|---|
-| DNS resolution failed | Corrected preferred DNS server |
-| Entra sync failed | Restarted sync service |
-
-This section is HUGE for recruiters.
-
----
-
-# Security Considerations
-
-Document security-related configurations.
-
-Examples:
-- Strong passwords enforced
-- Least privilege groups used
-- Firewall enabled
-- MFA enabled in Microsoft 365
-
----
-
-# Screenshots
-
-Add screenshots showing:
-- Installation
-- Configuration
-- Successful deployment
-
-Example:
-
-```md
-![Domain Controller](../screenshots/active-directory/server-manager.png)
-```
+| IP address didn't switch after changing it | Released the IP and renewed it |
+| Couldn't connect to any websites | Switched both dns addresses for the NICs to 172.16.0.10 the domain controller IP |
 
 ---
 
 # Skills Demonstrated
 
-- Windows Administration
+- Network Administration
 - Troubleshooting
 - DNS Configuration
-- Identity Management
-- Group Policy
+- DHCP Management
+- Routing configuration
 
 ---
 
 # Lessons Learned
 
-Explain what you learned during deployment.
-
 Example:
-I learned how DNS configuration directly impacts Active Directory authentication and workstation communication.
+I learned how the DNS configuration directly impacts website and domain connectivity. The importance of having a DHCP server with a scope to give devices in the domain specified IP addresses. Routing and why it's necessary to add NAT, so the users in the domain can access the internet with one address. 
