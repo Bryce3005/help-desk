@@ -1,4 +1,4 @@
-# Title of Setup
+# Office365 Setup
 
 ## Objective
 
