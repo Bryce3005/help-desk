@@ -1,4 +1,4 @@
-# Title of Setup
+Network Setup
 
 ## Objective
 
