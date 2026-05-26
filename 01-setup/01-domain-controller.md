@@ -39,19 +39,6 @@ Step-by-step deployment process.
 
 ---
 
-# Configuration Steps
-
-Document important configurations.
-
-Examples:
-- OU structure
-- GPOs
-- DNS settings
-- Ticket departments
-- Sync options
-
----
-
 # Validation / Testing
 
 Show how you verified functionality.
