@@ -27,8 +27,6 @@ A Domain Controller is used to authenticate users, enforce security policies, an
 
 Step-by-step deployment process.
 
-## Example
-
 ### Install Server Role
 
 1. Open VirtualBox
