@@ -9,7 +9,7 @@ This document outlines the Active Directory Organizational Unit structure used i
 
 | Component | Value |
 |---|---|
-| Domain | homelab.local |
+| Domain | brycefalker.com |
 | Domain Controller | DC01 |
 
 ---
@@ -17,28 +17,39 @@ This document outlines the Active Directory Organizational Unit structure used i
 # OU Structure
 
 ```text
-homelab.local
-├── Users
-├── Workstations
+brycefalker.com
+├── Builtin
+├── Computers
+├── Domain Controllers
+├── ForeignSecurityPrincipals
+├── Managed Service Accounts
 ├── Servers
-├── Groups
-├── IT
-├── HR
-├── Sales
-└── Admins
+├── User Accounts
+  ├── Admins
+  ├── Executives
+  ├── Finance
+  ├── HR
+  ├── IT
+  ├── Sales
+├── Workstations
 ```
 
 ---
 
 # OU Breakdown
 
-## Users OU
+## OU Users Accounts
 Purpose:
-- Stores standard user accounts
+- Stores company OU's containing user accounts
 
-Applied GPOs:
-- User Restrictions
-- Drive Mapping
+## OUs in Users Accounts
+- Admins
+- Disabled Users
+- Executives
+- Finance
+- HR
+- IT
+- Sales
 
 ---
 
@@ -61,28 +72,10 @@ Applied GPOs:
 
 ---
 
-# Delegation
-
-| Group | Permission |
-|---|---|
-| HelpDesk_Admins | Reset Passwords |
-| IT_Admins | Full Control |
-
----
-
-# Configuration Steps
-
-1.
-2.
-3.
-
----
-
 # Validation
 
 ## Tools Used
 - Active Directory Users and Computers
-- Group Policy Management
 
 ---
 
