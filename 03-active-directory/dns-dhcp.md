@@ -9,31 +9,28 @@ This document outlines the DNS and DHCP configuration used in the Help Desk Home
 
 | Component | Value |
 |---|---|
-| Domain Name | homelab.local |
+| Domain Name | brycefalker.com |
 | Domain Controller | DC01 |
-| Server IP | 192.168.1.10 |
-| DHCP Scope | 192.168.1.100 - 192.168.1.200 |
+| Server IP | 172.16.0.10 |
+| DHCP Scope | 172.16.0.100 - 172.16.0.200 |
 
 ---
 
 # DNS Configuration
 
 ## Forward Lookup Zone
-- Zone Name:
-- Type:
-- Replication Scope:
-
-## Reverse Lookup Zone
-- Network ID:
-- PTR Records Configured:
+- Zone Name: brycefalker.com
+- Type: Active Directory-Integrated Primary
+- Replication Scope: All DNS servers in this domain
 
 ## DNS Records
 
 | Record Type | Name | IP Address |
 |---|---|---|
-| A | dc01 | 192.168.1.10 |
-| A | fileserver | 192.168.1.20 |
-
+| A | dc01 | 172.16.0.10 |
+| A | osTicket | 172.16.0.102 |
+| A | Workstation1 | 172.16.0.100 |
+| A | Workstation2 | 172.16.0.101 |
 ---
 
 # DHCP Configuration
@@ -42,12 +39,12 @@ This document outlines the DNS and DHCP configuration used in the Help Desk Home
 
 | Setting | Value |
 |---|---|
-| Scope Name | |
-| IP Range | |
-| Subnet Mask | |
-| Default Gateway | |
-| DNS Server | |
-| Lease Duration | |
+| Scope Name | 172.16.0.100 - 172.16.0.200 |
+| IP Range | 172.16.0.100 - 172.16.0.200 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 172.16.0.10 |
+| DNS Server | 172.16.0.10 |
+| Lease Duration | 8 days |
 
 ---
 
@@ -55,47 +52,8 @@ This document outlines the DNS and DHCP configuration used in the Help Desk Home
 
 | Device | IP Address |
 |---|---|
-| Printer | |
-| Server | |
+| osTicket Server | 172.16.0.102 |
 
----
-
-# Configuration Steps
-
-## DNS Setup
-1.
-2.
-3.
-
-## DHCP Setup
-1.
-2.
-3.
-
----
-
-# Validation
-
-## Commands Used
-
-```powershell
-ipconfig /all
-nslookup dc01
-ping homelab.local
-```
-
----
-
-# Troubleshooting
-
-## Issue
-Describe issue here.
-
-## Cause
-Describe root cause.
-
-## Resolution
-Describe fix.
 
 ---
 
