@@ -16,12 +16,26 @@ Example: jsmith
 
 ---
 
-# Example Users
+# Users
 
 | Username | Department | Role |
 |---|---|---|
-| jsmith | HR | HR Specialist |
-| mjohnson | IT | Help Desk Technician |
+| bfalker | Admins | Domain Adminstrator |
+| ceo | Executives | Chief Executive Officer |
+| cfo | Executives | Chief Financial Officer |
+| director.it | Executives | IT Director |
+| pclark | Finance | Financial Analyst |
+| rthomas | Finance | Accountant |
+| kbrown | HR | HR Specialist |
+| mroberts | HR | HR Manager |
+| sjohnson | HR | Recruiter |
+| jsmith | IT | System Administrator |
+| helpdesk1 | IT | Help Desk Technician |
+|  mchen | IT | Network Administrator |
+| agarcia | Sales | Sales Representative |
+| dlee | Sales | Account Executive |
+| twhite | Sales | Sales Manager |
+
 
 ---
 
@@ -53,36 +67,6 @@ Purpose:
 |---|---|
 | HR_Share_RW | HR Shared Drive |
 | VPN_Users | VPN Access |
-
----
-
-# Account Management Tasks
-
-## Password Reset
-1.
-2.
-3.
-
-## Unlock Account
-1.
-2.
-3.
-
-## Add User to Group
-1.
-2.
-3.
-
----
-
-# Validation
-
-## Commands Used
-
-```powershell
-whoami /groups
-net user username /domain
-```
 
 ---
 
