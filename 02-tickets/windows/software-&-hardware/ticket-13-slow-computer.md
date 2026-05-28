@@ -1,29 +1,63 @@
-# Ticket: User Locked Out
 
-## Scenario
-User cannot sign into workstation after multiple failed attempts.
+---
+
+# `ticket-13-slow-computer.md`
+
+# Ticket 13 - Slow Computer Performance
+
+## Ticket Information
+- **Ticket ID:** PERF-013
+- **Priority:** Medium
+- **Category:** Performance Troubleshooting
+- **Status:** Resolved
+
+---
+
+## User Issue
+User reports workstation is running very slowly.
+
+---
 
 ## Environment
-- Windows 11
-- Active Directory
-- Microsoft 365
+- Windows 10/11
+- Domain Environment
+- Standard User Workstation
+
+---
 
 ## Symptoms
-- “Account Locked” message
-- Cannot access Outlook or Teams
+- Slow login times
+- Applications freezing
+- High CPU or RAM usage
+- Delayed startup
+- Slow internet/browser performance
+
+---
 
 ## Troubleshooting Steps
-1. Verified user identity
-2. Opened Active Directory Users and Computers
-3. Located user account
-4. Unlocked account
-5. Reset password
-6. Tested login successfully
+1. Checked CPU, RAM, and disk usage
+2. Reviewed startup applications
+3. Performed malware/antivirus scan
+4. Cleared temporary files
+5. Installed Windows updates
+6. Checked available disk space
+7. Restarted workstation
+8. Verified improved performance
+
+---
 
 ## Resolution
-User regained access after account unlock and password reset.
+Optimized startup programs and cleaned unnecessary files, restoring normal performance.
 
-## Skills Demonstrated
-- Active Directory administration
-- Password management
-- Account security troubleshooting
+---
+
+## Root Cause
+Excessive startup applications and resource usage degraded system performance.
+
+---
+
+## Commands / Tools Used
+```powershell
+taskmgr
+cleanmgr
+Get-Process
