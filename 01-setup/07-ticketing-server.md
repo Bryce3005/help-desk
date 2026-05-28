@@ -1,132 +1,67 @@
-# Ticketing Server Setup
+
+# 07 - Ticketing Server Setup
 
 ## Objective
-
-Explain what this system/service is used for and why it exists in the environment.
-
-Example:
-This server was configured to provide centralized identity management for the help desk environment.
+Deploy a help desk ticketing system for support simulations.
 
 ---
 
-# Environment Information
+# Ticketing Platform
 
-| Item | Value |
+| Software | Version |
 |---|---|
-| Server Name | DC01 |
-| OS | Windows Server 2022 |
-| IP Address | 192.168.1.10 |
-| Role | Domain Controller |
+| osTicket / GLPI | [Version] |
 
 ---
 
-# Prerequisites
+# Server Information
 
-List requirements before installation.
-
-Example:
-- Static IP configured
-- Windows Server installed
-- Internet connectivity
-- Administrator account
-- ISO downloaded
+| Setting | Value |
+|---|---|
+| Hostname | HELPDESK01 |
+| OS | Windows Server / Linux |
+| IP Address | 192.168.1.x |
 
 ---
 
 # Installation Steps
 
-Step-by-step deployment process.
-
-## Example
-
-### Install Server Role
-
-1. Open Server Manager
-2. Select Add Roles and Features
-3. Install:
-   - Active Directory Domain Services
-   - DNS Server
+1. Install web server
+2. Install database server
+3. Configure PHP
+4. Deploy ticketing platform
+5. Configure SMTP email
 
 ---
 
-# Configuration Steps
+# User Roles
 
-Document important configurations.
-
-Examples:
-- OU structure
-- GPOs
-- DNS settings
-- Ticket departments
-- Sync options
-
----
-
-# Validation / Testing
-
-Show how you verified functionality.
-
-Examples:
-- Successful domain join
-- User synced to Microsoft 365
-- Ticket submission successful
-- GPO applied correctly
-
----
-
-# Troubleshooting
-
-Document problems encountered and solutions.
-
-| Issue | Solution |
+| Role | Permissions |
 |---|---|
-| DNS resolution failed | Corrected preferred DNS server |
-| Entra sync failed | Restarted sync service |
-
-This section is HUGE for recruiters.
+| Admin | Full Access |
+| Technician | Ticket Management |
+| User | Submit Tickets |
 
 ---
 
-# Security Considerations
+# Ticket Categories
 
-Document security-related configurations.
+- Password Reset
+- Account Lockout
+- Network Issues
+- Software Issues
 
-Examples:
-- Strong passwords enforced
-- Least privilege groups used
-- Firewall enabled
-- MFA enabled in Microsoft 365
+---
+
+# Validation
+
+- Submit test ticket
+- Verify email notifications
+- Verify technician login
 
 ---
 
 # Screenshots
 
-Add screenshots showing:
-- Installation
-- Configuration
-- Successful deployment
-
-Example:
-
 ```md
-![Domain Controller](../screenshots/active-directory/server-manager.png)
-```
-
----
-
-# Skills Demonstrated
-
-- Windows Administration
-- Troubleshooting
-- DNS Configuration
-- Identity Management
-- Group Policy
-
----
-
-# Lessons Learned
-
-Explain what you learned during deployment.
-
-Example:
-I learned how DNS configuration directly impacts Active Directory authentication and workstation communication.
+![Ticket Dashboard](./screenshots/ticket-dashboard.png)
