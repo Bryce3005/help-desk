@@ -1,29 +1,69 @@
-# Ticket: User Locked Out
 
-## Scenario
-User cannot sign into workstation after multiple failed attempts.
+---
+
+# `ticket-17-unauthorized-software.md`
+
+# Ticket 17 - Unauthorized Software Installed
+
+## Ticket Information
+- **Ticket ID:** SEC-017
+- **Priority:** Medium
+- **Category:** Software Compliance
+- **Status:** Resolved
+
+---
+
+## User Issue
+Unauthorized or unapproved software was discovered on a company workstation.
+
+---
 
 ## Environment
-- Windows 11
+- Windows Domain Environment
+- Managed Endpoint Devices
 - Active Directory
-- Microsoft 365
+
+---
 
 ## Symptoms
-- “Account Locked” message
-- Cannot access Outlook or Teams
+- Unknown application installed
+- Security policy violation
+- Excessive resource usage
+- Unapproved remote access or gaming software
+
+---
 
 ## Troubleshooting Steps
-1. Verified user identity
-2. Opened Active Directory Users and Computers
-3. Located user account
-4. Unlocked account
-5. Reset password
-6. Tested login successfully
+1. Identified unauthorized application
+2. Verified software against approved software policy
+3. Uninstalled unauthorized software
+4. Scanned system for additional threats
+5. Checked installation source
+6. Verified user permissions
+7. Documented incident
+8. Applied software restriction policies if needed
+
+---
 
 ## Resolution
-User regained access after account unlock and password reset.
+Unauthorized software removed and endpoint brought back into compliance.
 
-## Skills Demonstrated
-- Active Directory administration
-- Password management
-- Account security troubleshooting
+---
+
+## Root Cause
+User installed software without administrative approval.
+
+---
+
+## Tools Used
+- Control Panel / Apps & Features
+- Group Policy Management
+- Microsoft Defender
+- PowerShell
+
+---
+
+## Commands / Tools
+```powershell
+Get-WmiObject Win32_Product
+appwiz.cpl
