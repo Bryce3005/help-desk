@@ -1,29 +1,57 @@
-# Ticket: User Locked Out
 
-## Scenario
-User cannot sign into workstation after multiple failed attempts.
+---
+
+# `ticket-04-cannot-access-drive.md`
+
+# Ticket 04 - Cannot Access Network Drive
+
+## Ticket Information
+- **Ticket ID:** HD-004
+- **Priority:** Medium
+- **Category:** File Share / Permissions
+- **Status:** Resolved
+
+---
+
+## User Issue
+User cannot access mapped network drive.
+
+---
 
 ## Environment
-- Windows 11
-- Active Directory
-- Microsoft 365
+- Windows Domain Environment
+- File Server
+- Shared Network Drives
+
+---
 
 ## Symptoms
-- “Account Locked” message
-- Cannot access Outlook or Teams
+- Access denied message
+- Network drive disconnected
+- Missing mapped drive
+
+---
 
 ## Troubleshooting Steps
-1. Verified user identity
-2. Opened Active Directory Users and Computers
-3. Located user account
-4. Unlocked account
-5. Reset password
-6. Tested login successfully
+1. Verified network connectivity
+2. Checked shared folder permissions
+3. Confirmed NTFS permissions
+4. Verified user group membership
+5. Remapped network drive
+6. Restarted workstation
+
+---
 
 ## Resolution
-User regained access after account unlock and password reset.
+Updated permissions and remapped the drive successfully.
 
-## Skills Demonstrated
-- Active Directory administration
-- Password management
-- Account security troubleshooting
+---
+
+## Root Cause
+Incorrect permissions or disconnected mapped drive.
+
+---
+
+## Commands / Tools Used
+```powershell
+net use Z: \\fileserver\sharedfolder
