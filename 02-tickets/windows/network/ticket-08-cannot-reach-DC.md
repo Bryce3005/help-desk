@@ -1,29 +1,63 @@
-# Ticket: User Locked Out
 
-## Scenario
-User cannot sign into workstation after multiple failed attempts.
+---
+
+# `ticket-08-cannot-reach-DC.md`
+
+# Ticket 08 - Cannot Reach Domain Controller
+
+## Ticket Information
+- **Ticket ID:** HD-008
+- **Priority:** High
+- **Category:** Active Directory / DNS
+- **Status:** Resolved
+
+---
+
+## User Issue
+Workstation cannot communicate with the domain controller.
+
+---
 
 ## Environment
-- Windows 11
+- Windows Server Domain Controller
 - Active Directory
-- Microsoft 365
+- DNS/DHCP Infrastructure
+- Domain-Joined Workstation
+
+---
 
 ## Symptoms
-- “Account Locked” message
-- Cannot access Outlook or Teams
+- Unable to log into domain account
+- Group Policy not applying
+- “Cannot contact domain controller” message
+- Network authentication failures
+
+---
 
 ## Troubleshooting Steps
-1. Verified user identity
-2. Opened Active Directory Users and Computers
-3. Located user account
-4. Unlocked account
-5. Reset password
-6. Tested login successfully
+1. Verified workstation network connectivity
+2. Checked DNS server configuration
+3. Pinged domain controller hostname
+4. Verified domain controller services
+5. Restarted DNS service if needed
+6. Forced Group Policy update
+7. Tested domain authentication successfully
+
+---
 
 ## Resolution
-User regained access after account unlock and password reset.
+Corrected DNS settings and restored communication with the domain controller.
 
-## Skills Demonstrated
-- Active Directory administration
-- Password management
-- Account security troubleshooting
+---
+
+## Root Cause
+Incorrect DNS configuration prevented workstation from locating the domain controller.
+
+---
+
+## Commands / Tools Used
+```powershell
+ping dc01
+nslookup domain.local
+gpupdate /force
+ipconfig /all
