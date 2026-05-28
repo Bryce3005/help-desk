@@ -1,29 +1,62 @@
-# Ticket: User Locked Out
 
-## Scenario
-User cannot sign into workstation after multiple failed attempts.
+---
+
+# `ticket-12-application-install-fail.md`
+
+# Ticket 12 - Application Install Failure via Remote Deployment
+
+## Ticket Information
+- **Ticket ID:** APP-012
+- **Priority:** Medium
+- **Category:** Software Deployment
+- **Status:** Resolved
+
+---
+
+## User Issue
+Application deployment failed through the company's software deployment tools or Group Policy.
+
+---
 
 ## Environment
-- Windows 11
 - Active Directory
-- Microsoft 365
+- Group Policy Software Deployment
+- SCCM / Intune / PDQ Deploy
+- Windows Domain Workstation
+
+---
 
 ## Symptoms
-- “Account Locked” message
-- Cannot access Outlook or Teams
+- Application missing after deployment
+- Failed deployment notification
+- Software Center install failure
+- Group Policy software installation errors
+
+---
 
 ## Troubleshooting Steps
-1. Verified user identity
-2. Opened Active Directory Users and Computers
-3. Located user account
-4. Unlocked account
-5. Reset password
-6. Tested login successfully
+1. Verified workstation OU placement
+2. Checked the Group Policy application
+3. Reviewed deployment logs
+4. Confirmed network share accessibility
+5. Forced Group Policy update
+6. Restarted workstation
+7. Re-ran software deployment
+8. Verified successful installation
+
+---
 
 ## Resolution
-User regained access after account unlock and password reset.
+Deployment completed successfully after correcting policy/deployment configuration.
 
-## Skills Demonstrated
-- Active Directory administration
-- Password management
-- Account security troubleshooting
+---
+
+## Root Cause
+Deployment policy or software package path misconfiguration.
+
+---
+
+## Commands / Tools Used
+```powershell
+gpupdate /force
+gpresult /r
