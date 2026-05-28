@@ -1,29 +1,62 @@
-# Ticket: User Locked Out
 
-## Scenario
-User cannot sign into workstation after multiple failed attempts.
+---
 
-## Environment
-- Windows 11
-- Active Directory
-- Microsoft 365
+# `ticket-05-new-employee.md`
 
-## Symptoms
-- “Account Locked” message
-- Cannot access Outlook or Teams
+# Ticket 05 - New Employee Onboarding
 
-## Troubleshooting Steps
-1. Verified user identity
-2. Opened Active Directory Users and Computers
-3. Located user account
-4. Unlocked account
-5. Reset password
-6. Tested login successfully
+## Ticket Information
+- **Ticket ID:** HD-005
+- **Priority:** Medium
+- **Category:** User Provisioning
+- **Status:** Completed
+
+---
+
+## Request
+Create accounts and provision access for a new employee.
+
+---
+
+## Employee Information
+- **Name:** [Employee Name]
+- **Department:** [Department]
+- **Title:** [Job Title]
+- **Manager:** [Manager Name]
+
+---
+
+## Tasks Completed
+- Created Active Directory account
+- Assigned Organizational Unit (OU)
+- Added security group memberships
+- Created Microsoft 365 mailbox
+- Assigned licenses
+- Configured MFA
+- Mapped department drives
+- Added printer access
+- Provided temporary password
+
+---
+
+## Systems Used
+- Active Directory Users and Computers
+- Microsoft 365 Admin Center
+- Entra Admin Center
+- Exchange Admin Center
+
+---
 
 ## Resolution
-User regained access after account unlock and password reset.
+Employee account fully configured and ready for first-day access.
 
-## Skills Demonstrated
-- Active Directory administration
-- Password management
-- Account security troubleshooting
+---
+
+## Root Cause
+Standard onboarding request.
+
+---
+
+## Screenshots
+```md
+![New User Creation](./screenshots/new-user.png)
