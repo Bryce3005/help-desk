@@ -1,132 +1,61 @@
-# Windows Workstations Setup
+
+# 04 - Windows Workstation Setup
 
 ## Objective
-
-Explain what this system/service is used for and why it exists in the environment.
-
-Example:
-This server was configured to provide centralized identity management for the help desk environment.
+Deploy and configure Windows client workstations.
 
 ---
 
-# Environment Information
+# Environment
 
-| Item | Value |
+| Component | Value |
 |---|---|
-| Server Name | DC01 |
-| OS | Windows Server 2022 |
-| IP Address | 192.168.1.10 |
-| Role | Domain Controller |
-
----
-
-# Prerequisites
-
-List requirements before installation.
-
-Example:
-- Static IP configured
-- Windows Server installed
-- Internet connectivity
-- Administrator account
-- ISO downloaded
+| OS | Windows 10/11 |
+| Domain | homelab.local |
 
 ---
 
 # Installation Steps
 
-Step-by-step deployment process.
-
-## Example
-
-### Install Server Role
-
-1. Open Server Manager
-2. Select Add Roles and Features
-3. Install:
-   - Active Directory Domain Services
-   - DNS Server
+1. Create workstation VM
+2. Install Windows
+3. Configure hostname
+4. Configure DHCP/static networking
+5. Join domain
+6. Restart workstation
 
 ---
 
-# Configuration Steps
+# Domain Join
 
-Document important configurations.
-
-Examples:
-- OU structure
-- GPOs
-- DNS settings
-- Ticket departments
-- Sync options
+## Steps
+1. Open System Properties
+2. Select Domain
+3. Enter homelab.local
+4. Authenticate with domain admin
+5. Restart system
 
 ---
 
-# Validation / Testing
+# Software Installed
 
-Show how you verified functionality.
-
-Examples:
-- Successful domain join
-- User synced to Microsoft 365
-- Ticket submission successful
-- GPO applied correctly
+- Google Chrome
+- Microsoft Office
+- Remote Desktop
+- Help Desk Tools
 
 ---
 
-# Troubleshooting
+# Validation
 
-Document problems encountered and solutions.
-
-| Issue | Solution |
-|---|---|
-| DNS resolution failed | Corrected preferred DNS server |
-| Entra sync failed | Restarted sync service |
-
-This section is HUGE for recruiters.
+- Test domain login
+- Verify internet access
+- Verify GPOs applied
 
 ---
 
-# Security Considerations
+# Commands
 
-Document security-related configurations.
-
-Examples:
-- Strong passwords enforced
-- Least privilege groups used
-- Firewall enabled
-- MFA enabled in Microsoft 365
-
----
-
-# Screenshots
-
-Add screenshots showing:
-- Installation
-- Configuration
-- Successful deployment
-
-Example:
-
-```md
-![Domain Controller](../screenshots/active-directory/server-manager.png)
-```
-
----
-
-# Skills Demonstrated
-
-- Windows Administration
-- Troubleshooting
-- DNS Configuration
-- Identity Management
-- Group Policy
-
----
-
-# Lessons Learned
-
-Explain what you learned during deployment.
-
-Example:
-I learned how DNS configuration directly impacts Active Directory authentication and workstation communication.
+```powershell
+systeminfo
+gpupdate /force
