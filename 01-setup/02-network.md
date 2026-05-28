@@ -1,74 +1,65 @@
-# Network Setup
+
+# 02 - Network Setup
 
 ## Objective
-
-This networking setup is designed to host servers and workstations and connect all devices to the domain network brycefalker.com. 
+Configure the homelab network infrastructure and connectivity.
 
 ---
 
-# Environment Information
+# Network Topology
 
-| Item | Value |
+## Devices
+- Domain Controller
+- Windows Clients
+- macOS Client
+- pfSense Firewall
+- Switch
+- Router
+
+---
+
+# IP Addressing Scheme
+
+| Device | IP Address |
 |---|---|
-| Server Name | DC01 |
-| OS | Windows Server 2022 |
-| IP Address | 172.16.0.10 |
-| Role | Domain Controller |
+| DC01 | 192.168.1.10 |
+| pfSense | 192.168.1.1 |
+| Windows Client | DHCP |
+| macOS Client | DHCP |
 
 ---
 
-# Prerequisites
+# DHCP Configuration
 
-- Creation of the domain controller machine
-  
----
-
-# Configuration Steps
-
-Document important configurations.
-
-Examples:
-- OU structure
-- GPOs
-- DNS settings
-- Ticket departments
-- Sync options
+## DHCP Scope
+- Start Range: 192.168.1.100
+- End Range: 192.168.1.200
+- Lease Duration: 8 Days
 
 ---
 
-# Validation / Testing
+# DNS Configuration
 
-- Pinged a DNS Server in the command prompt
-   - 8.8.8.8
-- Used ipconfig /all in the command prompt
-   - IP address for the internal NIC should be 172.16.0.10
-   -  IP address for the internet NIC should start with a 10
-- Open Microsoft Edge and see if you can access a website
+## DNS Server
+- Primary DNS: 192.168.1.10
 
 ---
 
-# Troubleshooting
+# VLANs (Optional)
 
-Document problems encountered and solutions.
-
-| Issue | Solution |
+| VLAN | Purpose |
 |---|---|
-| IP address didn't switch after changing it | Released the IP and renewed it |
-| Couldn't connect to any websites | Switched both dns addresses for the NICs to 172.16.0.10 the domain controller IP |
+| 10 | Servers |
+| 20 | Workstations |
+| 30 | Management |
 
 ---
 
-# Skills Demonstrated
+# Connectivity Testing
 
-- Network Administration
-- Troubleshooting
-- DNS Configuration
-- DHCP Management
-- Routing configuration
+## Commands
 
----
-
-# Lessons Learned
-
-Example:
-I learned how the DNS configuration directly impacts website and domain connectivity. The importance of having a DHCP server with a scope to give devices in the domain specified IP addresses. Routing and why it's necessary to add NAT, so the users in the domain can access the internet with one address. 
+```powershell
+ping dc01
+ipconfig /all
+nslookup homelab.local
