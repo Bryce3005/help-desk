@@ -1,109 +1,69 @@
-# Domain Controller Setup
+# 01 - Domain Controller Setup
 
 ## Objective
-
-The Domain Controller is used to authenticate users, enforce security policies, and manage resource access.
+Build and configure a Windows Server Domain Controller for the help desk homelab environment.
 
 ---
 
 # Environment Information
 
-| Item | Value |
+| Component | Value |
 |---|---|
-| Server Name | DC01 |
-| OS | Windows Server 2025 |
-| IP Address | 172.16.0.10 |
-| Role | Domain Controller |
+| Hypervisor | VirtualBox |
+| Server OS | Windows Server 2022 |
+| Hostname | DC01 |
+| Domain Name | homelab.local |
+| IP Address | 192.168.1.10 |
+| RAM | 4-8 GB |
+| CPU | 2 vCPUs |
 
 ---
 
-# Prerequisites
+# VM Configuration
 
-- VirtualBox Downloaded
-
----
-
-# Installation Steps
-
-Step-by-step deployment process.
-
-### Install Server Role
-
-1. Open VirtualBox
-2. Left-click the new button
-3. Enter:
-   - The name of the machine (DC01)
-   - The ISO Image
-   - OS Edition
-   - 
+## VirtualBox Settings
+- Generation: [N/A]
+- Network Adapter: Bridged / Internal Network
+- Storage Size: 60 GB
+- ISO Used: Windows Server 2022 ISO
 
 ---
 
-# Validation / Testing
+# Windows Server Installation
 
-Show how you verified functionality.
-
-Examples:
-- Successful domain join
-- User synced to Microsoft 365
-- Ticket submission successful
-- GPO applied correctly
+## Steps
+1. Create new VM
+2. Attach Windows Server ISO
+3. Configure RAM/CPU
+4. Install Windows Server
+5. Set Administrator password
+6. Configure static IP address
+7. Rename computer to DC01
+8. Restart server
 
 ---
 
-# Troubleshooting
+# Static IP Configuration
 
-Document problems encountered and solutions.
-
-| Issue | Solution |
+| Setting | Value |
 |---|---|
-| DNS resolution failed | Corrected preferred DNS server |
-| Entra sync failed | Restarted sync service |
-
-This section is HUGE for recruiters.
-
----
-
-# Security Considerations
-
-Document security-related configurations.
-
-Examples:
-- Strong passwords enforced
-- Least privilege groups used
-- Firewall enabled
-- MFA enabled in Microsoft 365
+| IP Address | 192.168.1.10 |
+| Subnet Mask | 255.255.255.0 |
+| Gateway | 192.168.1.1 |
+| DNS Server | 192.168.1.10 |
 
 ---
 
-# Screenshots
+# Active Directory Installation
 
-Add screenshots showing:
-- Installation
-- Configuration
-- Successful deployment
-
-Example:
-
-```md
-![Domain Controller](../screenshots/active-directory/server-manager.png)
-```
+## Roles Installed
+- Active Directory Domain Services
+- DNS Server
+- DHCP Server
 
 ---
 
-# Skills Demonstrated
+## PowerShell Commands
 
-- Windows Administration
-- Troubleshooting
-- DNS Configuration
-- Identity Management
-- Group Policy
-
----
-
-# Lessons Learned
-
-Explain what you learned during deployment.
-
-Example:
-I learned how DNS configuration directly impacts Active Directory authentication and workstation communication.
+```powershell
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
