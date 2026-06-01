@@ -39,4 +39,4 @@ Bind macOS devices to Active Directory and test authentication.
 
 ```bash
 dsconfigad -show
-sudo dsconfigad -add homelab.local
+sudo dsconfigad -add brycefalker.com
