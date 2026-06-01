@@ -10,11 +10,6 @@ Configure the homelab network infrastructure and connectivity.
 
 ## Devices
 - Domain Controller
-- Windows Clients
-- macOS Client
-- pfSense Firewall
-- Switch
-- Router
 
 ---
 
@@ -22,18 +17,15 @@ Configure the homelab network infrastructure and connectivity.
 
 | Device | IP Address |
 |---|---|
-| DC01 | 192.168.1.10 |
-| pfSense | 192.168.1.1 |
-| Windows Client | DHCP |
-| macOS Client | DHCP |
+| DC01 | 172.16.0.10 |
 
 ---
 
 # DHCP Configuration
 
 ## DHCP Scope
-- Start Range: 192.168.1.100
-- End Range: 192.168.1.200
+- Start Range: 172.16.0.100
+- End Range: 172.16.0.200
 - Lease Duration: 8 Days
 
 ---
@@ -41,24 +33,19 @@ Configure the homelab network infrastructure and connectivity.
 # DNS Configuration
 
 ## DNS Server
-- Primary DNS: 192.168.1.10
+- Primary DNS: 172.16.0.10
 
 ---
 
-# VLANs (Optional)
+# Routing Configuration
 
-| VLAN | Purpose |
-|---|---|
-| 10 | Servers |
-| 20 | Workstations |
-| 30 | Management |
+## NAT
+- The Internet NIC acts as the router
+  - One IP address is used to connect to the internet for all devices
 
 ---
-
-# Connectivity Testing
 
 ## Commands
-
 ```powershell
 ping dc01
 ipconfig /all
