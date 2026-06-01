@@ -18,7 +18,7 @@ Configure macOS workstation for homelab integration.
 # Installation Steps
 
 1. Install macOS
-2. Configure networking
+2. Ensure the adapter is set to the internal network
 3. Enable remote access
 4. Install productivity tools
 
@@ -30,4 +30,4 @@ Configure macOS workstation for homelab integration.
 
 ```bash
 ifconfig
-ping 192.168.1.10
+ping 172.16.0.10
