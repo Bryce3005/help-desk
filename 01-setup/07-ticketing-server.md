@@ -18,7 +18,7 @@ Deploy a help desk ticketing system for support simulations.
 
 | Setting | Value |
 |---|---|
-| Hostname | HELPDESK01 |
+| Hostname | osTicket |
 | OS | Windows Server / Linux |
 | IP Address | 192.168.1.x |
 
@@ -26,11 +26,11 @@ Deploy a help desk ticketing system for support simulations.
 
 # Installation Steps
 
-1. Install web server
+1. Install a web server
 2. Install database server
 3. Configure PHP
 4. Deploy ticketing platform
-5. Configure SMTP email
+
 
 ---
 
