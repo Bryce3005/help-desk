@@ -11,17 +11,17 @@ Deploy and configure Windows client workstations.
 | Component | Value |
 |---|---|
 | OS | Windows 10/11 |
-| Domain | homelab.local |
+| Domain | brycefalker.com |
 
 ---
 
 # Installation Steps
 
 1. Create workstation VM
-2. Install Windows
-3. Configure hostname
-4. Configure DHCP/static networking
-5. Join domain
+2. Ensure that your network adapter is set to Internal Network
+3. Install Windows
+4. Configure hostname
+5. Join the domain
 6. Restart workstation
 
 ---
@@ -31,8 +31,8 @@ Deploy and configure Windows client workstations.
 ## Steps
 1. Open System Properties
 2. Select Domain
-3. Enter homelab.local
-4. Authenticate with domain admin
+3. Enter brycefalker.com
+4. Authenticate with the domain admin account you created
 5. Restart system
 
 ---
