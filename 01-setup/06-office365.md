@@ -19,15 +19,15 @@ Configure Microsoft 365 services and identity synchronization.
 
 | Setting | Value |
 |---|---|
-| Tenant Name | [Tenant Name] |
-| Domain | [Custom Domain] |
+| Tenant Name | [Bryce Falker] |
+| Domain | [BryceFalker@brycefalker.onmicrosoft.com] |
 
 ---
 
 # User Synchronization
 
 ## Entra Connect
-- Installed on separate server
+- Installed on a separate server
 - Password Hash Sync enabled
 
 ---
