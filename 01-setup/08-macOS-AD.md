@@ -11,8 +11,8 @@ Bind macOS devices to Active Directory and test authentication.
 | Component | Value |
 |---|---|
 | macOS Version | Sonoma / Ventura |
-| Domain | homelab.local |
-| Domain Controller | DC01 |
+| Domain | brycefalker.com |
+| Domain Controller | DC |
 
 ---
 
